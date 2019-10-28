@@ -39,6 +39,6 @@ int main(int argc, char const *argv[])
 	cout<<"\nEnter target(sum): ";
 	cin>>target;
 	twosum(array,target,n);
-
+	delete array;
 	return 0;
 }
