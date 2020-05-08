@@ -5,7 +5,7 @@ using namespace std;
 void max_water(int arr[], int n)
 {
 	int max_area = 0,l=0, r=n-1;
-	while(l<n)
+	while(l<r)
 	{
 		max_area = max(max_area,min(arr[l],arr[r])*(r-l));
 		if(arr[l]<arr[r])
