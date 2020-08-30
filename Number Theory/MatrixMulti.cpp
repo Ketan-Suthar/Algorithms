@@ -13,14 +13,13 @@ void mul(ll A[][SIZE+1], ll B[][SIZE+1], ui m)
 {
 	ll res[SIZE+1][SIZE+1];
 	REP(i, m)
-	{
 		REP(j, m)
 		{
 			res[i][j] =0;
 			REP(k,m)
 				res[i][j] += A[i][k] * B[k][j];
 		}
-	}
+	
 	REP(i, m)
 		REP(j, m)
 			A[i][j] = res[i][j];

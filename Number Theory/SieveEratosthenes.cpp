@@ -4,9 +4,9 @@ using namespace std;
 #define SIZE 1000000
 bool primes[SIZE+1];
 
-bool fillPrimes(int n)
+void fillPrimes(int n)
 {
-	for(int i=0; i<=SIZE+1; i++)
+	for(int i=0; i<=SIZE; i++)
 		primes[i] = 1;
 
 	primes[0] = primes[1] = 0;
@@ -15,8 +15,6 @@ bool fillPrimes(int n)
 		if(primes[i])
 			for(int j=i*i; j<=n; j+=i)
 				primes[j] = 0;
-
-	return true;
 }
 
 int main(int argc, char const *argv[])
