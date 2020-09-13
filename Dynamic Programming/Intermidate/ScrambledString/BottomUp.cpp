@@ -16,7 +16,11 @@ public:
             return temp[key];
         for( int i=1; i<n; i++ )
         {
-            if( ( ( fun(s1.substr(0,i), s2.substr(n-i,i))) && (fun(s1.substr(i,n-i), s2.substr(0,n-i))) ) || ( ( fun(s1.substr(0,i), s2.substr(0,i))) && (fun(s1.substr(i,n-i), s2.substr(i,n-i)))))
+            if( ( ( fun(s1.substr(0,i), s2.substr(n-i,i))) 
+                    && (fun(s1.substr(i,n-i), s2.substr(0,n-i))) )
+                || 
+                ( ( fun(s1.substr(0,i), s2.substr(0,i)))
+                    && (fun(s1.substr(i,n-i), s2.substr(i,n-i)))))
             {
                 flag = true;
                 break;

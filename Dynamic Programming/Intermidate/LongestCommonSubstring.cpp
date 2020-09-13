@@ -8,13 +8,11 @@ static int table[SIZE+1][SIZE+1];
 int fun(char text1[], int m, char text2[], int n)
 {
     int i, j, max = 0;
-    for (i = 0; i <= m; i++)  
+    for (i = 1; i <= m; i++)  
     {  
-        for (j = 0; j <= n; j++)  
+        for (j = 1; j <= n; j++)  
         {  
-            if (i == 0 || j == 0)  
-                table[i][j] = 0;
-            else if (text1[i - 1] == text2[j - 1])  
+            if (text1[i - 1] == text2[j - 1])  
             {
                 table[i][j] = table[i - 1][j - 1] + 1;
                 if(table[i][j] > max)

@@ -23,11 +23,11 @@ void sortArray(int arr[], int n)
         arr[0] ^= arr[1] ^= arr[0] ^= arr[1];
         return;
     }
-    
+
     int temp = arr[n-1];
-    
+
     sortArray(arr, n-1);
-    
+
     insertElement(arr, n-1, temp);
 }
 

@@ -1,21 +1,24 @@
-int solve(Node *root, int &res)
-{
-    if(root == nullptr)
-        return 0;
+class Solution {
 
-    int l = solve(root->left, res);
-    int r = solve(root->right, res);
-
-    int temp = max(l,r) + 1;
-    int ans = max(temp, (l+r+1));
-    res = max(res, ans);
-
-    return temp;
-}
-
-int diameter(Node* node)
-{
-    int res = INT_MIN;
-    solve(node, res);
-    return res;
-}
+public:
+    int helper(TreeNode* root, long &result)
+    {
+        if(!root)
+            return 0;    
+        long left = helper(root->left, result);
+        long right = helper(root->right, result);
+        long temp = 1 + max(left, right);
+        long ans = (left + right + 1);
+        result = max(result, ans);
+        
+        return temp;
+    }
+    int diameterOfBinaryTree(TreeNode* root)
+    {
+        if(!root)
+            return 0; 
+        long result = INT_MIN;
+        helper(root, result);
+        return result-1;
+    }
+};
